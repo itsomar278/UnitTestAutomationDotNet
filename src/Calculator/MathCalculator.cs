@@ -25,4 +25,22 @@ public class MathCalculator
         }
         return (double)a / b;
     }
+
+    public int Modulo(int a, int b)
+    {
+        if (b == 0)
+        {
+            throw new DivideByZeroException("Cannot compute modulo by zero");
+        }
+        return a % b;
+    }
+
+    public double Power(int baseNumber, int exponent)
+    {
+        if (exponent < 0)
+        {
+            throw new ArgumentException("Exponent must be non-negative", nameof(exponent));
+        }
+        return Math.Pow(baseNumber, exponent);
+    }
 }
