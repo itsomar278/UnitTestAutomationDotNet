@@ -8,12 +8,14 @@ public class Book
     public string ISBN { get; private set; }
     public int PublicationYear { get; private set; }
     public bool IsAvailable { get; private set; }
+    public string Description { get; private set; }
 
     private Book()
     {
         Title = string.Empty;
         Author = string.Empty;
         ISBN = string.Empty;
+        Description = string.Empty;
     }
 
     public Book(Guid id, string title, string author, string isbn, int publicationYear)
@@ -33,6 +35,7 @@ public class Book
         ISBN = isbn;
         PublicationYear = publicationYear;
         IsAvailable = true;
+        Description = string.Empty;
     }
 
     public void BorrowBook()
@@ -49,5 +52,13 @@ public class Book
             throw new InvalidOperationException("Book is already available");
 
         IsAvailable = true;
+    }
+
+    public void UpdateDescription(string description)
+    {
+        if (description == null)
+            throw new ArgumentNullException(nameof(description));
+
+        Description = description;
     }
 }
