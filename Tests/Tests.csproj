@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Calculator\Calculator.csproj" />
+    <ProjectReference Include="..\src\TodoList\TodoList.csproj" />
   </ItemGroup>
 
 </Project>
