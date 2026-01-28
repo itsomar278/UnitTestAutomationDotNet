@@ -26,4 +26,10 @@ public class TodoItem
     {
         IsCompleted = false;
     }
+
+    public void UpdateDescription(string newDescription)
+    {
+        // Description can be empty/null (allowed to clear description)
+        Description = newDescription ?? string.Empty;
+    }
 }
