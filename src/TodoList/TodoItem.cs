@@ -26,4 +26,14 @@ public class TodoItem
     {
         IsCompleted = false;
     }
+
+    public void UpdateTitle(string newTitle)
+    {
+        if (string.IsNullOrWhiteSpace(newTitle))
+        {
+            throw new ArgumentException("Title cannot be empty", nameof(newTitle));
+        }
+
+        Title = newTitle;
+    }
 }
